@@ -1,0 +1,7 @@
+.venv
+*.json
+*.log
+*.pyc
+__pycache__/
+/PDFs/*
+.env

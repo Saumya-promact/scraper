@@ -1,0 +1,46 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-py"
+  interface = "asyncio"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Metadata {
+  id           String  @id @default(uuid())
+  filename     String?
+  court        String?
+  abbr         String?
+  caseno       String?
+  dated        String?
+  casename     String?
+  counsel      String?
+  overrule     String?
+  overuleby    String?
+  citation     String?
+  coram        String?
+  act          String?
+  bench        String?
+  result       String?
+  headnotes    String?
+  caserefered  String?
+  ssd          String?
+  reportable   String?
+  pdf_link     String?
+  type         String?
+  coram_count  Int?
+  petitioner   String?
+  respondent   String?
+  bla_citation String?
+  qr_link      String?
+
+  @@map("metadata")
+}
